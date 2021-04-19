@@ -1,0 +1,20 @@
+<div class="personal">
+  <h5><i class="far fa-lightbulb"></i> Interests</h5>
+  {% if site.personal  %}
+    <div class="table-responsive">
+      <table class="table table-condensed table-sm table-borderless table-hover">
+      {% assign personal = site.personal %}
+      {% for item in personal %}
+        <tr>
+          <th scope="row">{{ item.icons | remove: '<p>' | remove: '</p>' | emojify }}</th>
+          <td>
+            {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+          </td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No news so far...</p>
+  {% endif %}
+</div>
