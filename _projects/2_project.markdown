@@ -27,7 +27,7 @@ By exploring all these alternatives, potential cost savings can be made over a p
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1 center-block" src="{{ '/assets/img/TRS/pic1_K.jpg' | relative_url }}" alt="" title="tech transfer"/>
+        <img class="img-fluid rounded z-depth-1 center-block" src="{{ '/assets/img/TRS/pic1_K.JPG' | relative_url }}" alt="" title="tech transfer"/>
     </div>
 </div>
 <div class="caption">

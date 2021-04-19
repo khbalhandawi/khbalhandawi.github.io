@@ -2,7 +2,7 @@
 layout: page
 title: Corrosion sensing
 description: Corrosion detection using strain and photonic sensors
-img: /assets/img/corrosion/corrosion_dp.png
+img: /assets/img/Corrosion/corrosion_dp.png
 importance: 5
 category: research
 ---
@@ -22,10 +22,10 @@ I found out that the rate of corrosion d&delta;/dt is proportional to the rate a
 for a beam of length L, bent by an angle &alpha;. This concept is simulated below.
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/corrosion/loading.gif' | relative_url }}" alt="" title="loading"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Corrosion/loading.gif' | relative_url }}" alt="" title="loading"/>
     </div>
     <div class="col-sm-6 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/corrosion/corrosion.gif' | relative_url }}" alt="" title="corrosion"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Corrosion/corrosion.gif' | relative_url }}" alt="" title="corrosion"/>
     </div>
 </div>
 <div class="caption">

@@ -1,0 +1,5 @@
+git update-index --chmod=+x .github/stale.yml
+git update-index --chmod=+x .github/FUNDING.yml
+git update-index --chmod=+x .github/workflows/deploy.yml
+git update-index --chmod=+x .github/workflows/deploy.yml
+git update-index --chmod=+x bin/deploy

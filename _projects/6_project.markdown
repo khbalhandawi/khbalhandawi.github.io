@@ -34,7 +34,7 @@ The finished vehicle passed rigorous technical screening at the Baja SAE competi
         <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/in_action.jpg' | relative_url }}" alt="" title="example image"/>
     </div>
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/in_action_2.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/maneuverability.jpg' | relative_url }}" alt="" title="example image"/>
     </div>
 </div>
 <div class="caption">
