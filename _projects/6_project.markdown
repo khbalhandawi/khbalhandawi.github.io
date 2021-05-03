@@ -11,13 +11,13 @@ I worked on this project first as a student and later as a mentor for other stud
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/design.png' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/design.png' | relative_url }}" alt="" title="CAD"/>
     </div>
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/deformation.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/deformation.jpg' | relative_url }}" alt="" title="FEA"/>
     </div>
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/aerodynamics.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/aerodynamics.jpg' | relative_url }}" alt="" title="CFD"/>
     </div>
 </div>
 <div class="caption">
@@ -28,13 +28,13 @@ The finished vehicle passed rigorous technical screening at the Baja SAE competi
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/Finished_car.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/Finished_car.jpg' | relative_url }}" alt="" title="Technical inspection"/>
     </div>
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/in_action.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/in_action.jpg' | relative_url }}" alt="" title="endurance event"/>
     </div>
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/maneuverability.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/maneuverability.jpg' | relative_url }}" alt="" title="maneuverability event"/>
     </div>
 </div>
 <div class="caption">
@@ -45,7 +45,7 @@ This was a team effort and would not have made that far with them.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/Team_photo.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/Team_photo.jpg' | relative_url }}" alt="" title="Baja SAE team"/>
     </div>
 </div>
 <div class="caption">

@@ -23,7 +23,7 @@ Temperatures are described by a moving Gaussian heat source:
         </p>
     </div>
     <div class="col-sm-6 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/thermomechanical/Heat_source.png' | relative_url }}" alt="" title="optimal policies"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/thermomechanical/Heat_source.png' | relative_url }}" alt="" title="Guassian heat source"/>
     </div>
 </div>
 &nbsp;&nbsp;

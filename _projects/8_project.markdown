@@ -15,20 +15,20 @@ Once the mechanical setup was built, I used kinematics, and rotation matrices to
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/animation.gif' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/animation.gif' | relative_url }}" alt="" title="kinematics"/>
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Forward and inverse kinematics of a RRR robotic manipulator when used for walking
 </div>
 
 I used and configured a microcontroller (Arduino) to provide the actuation signal to the servo-valves that distribute hydraulic power throughout the hexapod and achieved smooth tracking of the target trajectory that I provided.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0 equal-height-hexapod">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/test_rig.png' | relative_url }}" alt="" title="stress"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/test_rig.png' | relative_url }}" alt="" title="test rig"/>
     </div>
     <div class="col-sm-4 mt-3 mt-md-0 equal-height-hexapod">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/working_arm.gif' | relative_url }}" alt="" title="stress"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/working_arm.gif' | relative_url }}" alt="" title="in action"/>
     </div>
 </div>

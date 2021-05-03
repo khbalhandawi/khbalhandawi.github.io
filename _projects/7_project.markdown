@@ -13,13 +13,13 @@ After the vehicle was built, I oversaw the manufacturing of the various componen
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/aerodynamics.png' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/aerodynamics.png' | relative_url }}" alt="" title="canopy aerodynamics"/>
     </div>
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/Solar_stand.png' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/Solar_stand.png' | relative_url }}" alt="" title="charging accessory design"/>
     </div>
     <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/charging.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/charging.jpg' | relative_url }}" alt="" title="solar charging"/>
     </div>
 </div>
 <div class="caption">
@@ -30,21 +30,21 @@ My team competed in The Abu Dhabi Solar Challenge (January 15th – 19th 2015) e
 
 <div class="row">
     <div class="col-sm mt-6 mt-md-0 equal-height-medium">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/dessert.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/dessert.jpg' | relative_url }}" alt="" title="Rub' al Khali dessert"/>
     </div>
     <div class="col-sm mt-6 mt-md-0 equal-height-medium">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/yas.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/yas.jpg' | relative_url }}" alt="" title="Yas Marina Circuit"/>
     </div>
 </div>
 <div class="caption">
-    Finished vehicle during various competition events in Maryland (2014)
+    Finished vehicle during various competition events of the Abu Dhabi Solar Challenge (2014)
 </div>
 
 Here is a photograph of my team who I had the pleasure of working with!
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/Solar team.jpg' | relative_url }}" alt="" title="example image"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/Solar team.jpg' | relative_url }}" alt="" title="Solar car team"/>
     </div>
 </div>
 <div class="caption">

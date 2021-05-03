@@ -35,6 +35,6 @@ I used <a href="https://arxiv.org/abs/1911.01012" target="_blank">`StoMADS`</a>,
     The trajectory of the number of infections shown for arbitrary health policies (left) and optimal health policies (right).
 </div>
 
-<a href="https://getbootstrap.com/docs/4.4/layout/grid/" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
+<a href="https://www.gerad.ca/en/papers/G-2021-07" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
 <a href="https://github.com/khbalhandawi/COVID_SIM" target="_blank"> <i class="fab fa-github"></i> open source code</a>
 
