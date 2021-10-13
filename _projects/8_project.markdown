@@ -1,34 +1,52 @@
 ---
 layout: page
-title: Hexapod
-description: A hydraulic powered hexapod
-img: /assets/img/hexapod/Hexapod_dp.jpg
+title: Solar car
+description: A solar-powered vehicle
+img: /assets/img/solar_car/solar_car_dp.png
 importance: 8
 category: fun
 ---
 
-I designed and developed of a six-legged hexapod platform that employed a hydraulic system to actuate each of the six robotic manipulators used for locomotion. 
+I took a liking to design and manufacturing ever since I started learning about engineering. Naturally, I gravitated towards roles in the Khalifa University solar car team that would align with my interests. I took charge of the aerodynamic design of the body and driver canopy. 
 
-The robotic manipulator (a leg of the hexapod) was reverse engineered and repurposed for walking from a used hydraulic excavator manufactured by JCB. I made a faithful reproduction of the 3D CAD model in SOLIDWORKS by taking measurements from the physical excavator so that the necessary modifications can be designed and manufactured.
-
-Once the mechanical setup was built, I used kinematics, and rotation matrices to compute the necessary actuation for tracking a given trajectory.
+After the vehicle was built, I oversaw the manufacturing of the various components and accessories needed to operate the vehicle. One such example is shown below for a portable and compact stand on which to place the vehicle solar array during charging. It could also be titled in order to track the sun at different times of the day.
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/animation.gif' | relative_url }}" alt="" title="kinematics"/>
+    <div class="col-sm mt-3 mt-md-0 equal-height-short">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/aerodynamics.png' | relative_url }}" alt="" title="canopy aerodynamics"/>
+    </div>
+    <div class="col-sm mt-3 mt-md-0 equal-height-short">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/Solar_stand.png' | relative_url }}" alt="" title="charging accessory design"/>
+    </div>
+    <div class="col-sm mt-3 mt-md-0 equal-height-short">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/charging.jpg' | relative_url }}" alt="" title="solar charging"/>
     </div>
 </div>
 <div class="caption">
-    Forward and inverse kinematics of a RRR robotic manipulator when used for walking
+    Aerodynamic design of vehicle canopy (left), and charging stand accessory (right)
 </div>
 
-I used and configured a microcontroller (Arduino) to provide the actuation signal to the servo-valves that distribute hydraulic power throughout the hexapod and achieved smooth tracking of the target trajectory that I provided.
+My team competed in The Abu Dhabi Solar Challenge (January 15th – 19th 2015) earning **second place**. We were the first from our country (the UAE) to compete in such an event.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0 equal-height-hexapod">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/test_rig.png' | relative_url }}" alt="" title="test rig"/>
+<div class="row">
+    <div class="col-sm mt-6 mt-md-0 equal-height-medium">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/dessert.jpg' | relative_url }}" alt="" title="Rub' al Khali dessert"/>
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0 equal-height-hexapod">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/hexapod/working_arm.gif' | relative_url }}" alt="" title="in action"/>
+    <div class="col-sm mt-6 mt-md-0 equal-height-medium">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/yas.jpg' | relative_url }}" alt="" title="Yas Marina Circuit"/>
     </div>
+</div>
+<div class="caption">
+    Finished vehicle during various competition events of the Abu Dhabi Solar Challenge (2014)
+</div>
+
+Here is a photograph of my team who I had the pleasure of working with!
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/solar_car/Solar team.jpg' | relative_url }}" alt="" title="Solar car team"/>
+    </div>
+</div>
+<div class="caption">
+    The team!
 </div>

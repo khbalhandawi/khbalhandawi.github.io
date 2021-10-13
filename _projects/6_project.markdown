@@ -1,53 +1,35 @@
 ---
 layout: page
-title: Baja SAE
-description: An offroad vehicle
-img: /assets/img/Baja/Baja_dp.png
+title: Corrosion sensing
+description: Corrosion detection using strain and photonic sensors
+img: /assets/img/Corrosion/corrosion_dp.png
 importance: 6
-category: fun
+category: research
 ---
 
-I worked on this project first as a student and later as a mentor for other students during my time at Khalifa university. I learned a lot not only by working on the design, but also teaching simulation and design skills to students that were shadowing me. I also put together fun and engaging workshops to teach undergraduate students these important engineering and problem-solving skills. Below are just a few examples of the kind of engineering work that I managed to pass on to my students. The final outcome of this project was to participate in the annual Baja SAE competition held in the United States.
+Corrosion is an elusive quantity to measure accurately. This is because of all the electrodes that you would need to measure and record the corrosion current. This method is impractical when it comes to passive monitoring of structures that span several kilometers such as pipelines.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/design.png' | relative_url }}" alt="" title="CAD"/>
+Passive strain sensors based on light on fiber optics can accomplish this task by measure the rate at which strain decreases when a structure corrodes. I used a simple pre-stressed beam to demonstrate this concept.
+
+I found out that the rate of corrosion d&delta;/dt is proportional to the rate at which strain decreases d&epsilon;/dt.
+
+<p>
+\begin{equation*}
+\dfrac{d\delta}{dt} = \dfrac{4L}{3\sin \alpha}\dfrac{d\varepsilon}{dt},
+\end{equation*}
+</p>
+
+for a beam of length L, bent by an angle &alpha;. This concept is simulated below.
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Corrosion/loading.gif' | relative_url }}" alt="" title="loading"/>
     </div>
-    <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/deformation.jpg' | relative_url }}" alt="" title="FEA"/>
-    </div>
-    <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/aerodynamics.jpg' | relative_url }}" alt="" title="CFD"/>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Corrosion/corrosion.gif' | relative_url }}" alt="" title="corrosion"/>
     </div>
 </div>
 <div class="caption">
-    CAD design (left), structural simulation (middle), and aerodynamic simulation (right) of the vehicle
+    Process of pre-stressed a metal beam (left) and subsequently corroding it (right) and their effect on strain
 </div>
 
-The finished vehicle passed rigorous technical screening at the Baja SAE competition in Maryland. We completed all the racing events and were the first team from our country (the UAE) to take part in such an event.
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/Finished_car.jpg' | relative_url }}" alt="" title="Technical inspection"/>
-    </div>
-    <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/in_action.jpg' | relative_url }}" alt="" title="endurance event"/>
-    </div>
-    <div class="col-sm mt-3 mt-md-0 equal-height-short">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/maneuverability.jpg' | relative_url }}" alt="" title="maneuverability event"/>
-    </div>
-</div>
-<div class="caption">
-    Finished vehicle during various competition events in Maryland (2014)
-</div>
-
-This was a team effort and would not have made that far with them.
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Baja/Team_photo.jpg' | relative_url }}" alt="" title="Baja SAE team"/>
-    </div>
-</div>
-<div class="caption">
-    The team!
-</div>
+<a href="http://dx.doi.org/10.1016/j.snb.2016.05.167s" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;

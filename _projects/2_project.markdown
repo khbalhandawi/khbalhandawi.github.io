@@ -1,38 +1,40 @@
 ---
 layout: page
-title: Scalable designs
-description: optimal designs for dynamic design requirements
-img: /assets/img/TRS/TRS_dp.png
+title: Public health policy
+description: Infectious disease prediction and control
+img: /assets/img/COVID/COVID_dp.png
 importance: 2
 category: research
 ---
 
-*How do you design a component when the design requirements can change at any moment and without advance notice?*
+*How can we apply the principles of design and decision making to help bring the pandemic under control?*
 
-That is the question my dissertation tries to answer. To do so, I came up with design metrics for qualitative descriptions such as flexibility and robustness. I used optimization, automation and machine learning to obtain thousands of possible designs. This is a **1000 fold** increase in the number of alternatives that are presented during client meetings in the industry.
-
-<div class="row justify-content-sm-center equal-height">
-    <div class="col-sm-5 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/TRS/designs.gif' | relative_url }}" alt="" title="parametric designs"/>
-    </div>
-    <div class="col-sm-7 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/TRS/tradespace.gif' | relative_url }}" alt="" title="tradespace"/>
-    </div>
-</div>
-<div class="caption">
-    Examples of some of the parametric optimal designs (left) and the tradeoff between different design requirements (right).
-</div>
-
-By exploring all these alternatives, potential cost savings can be made over a period of decades. My research culminated in a technology transfer at [GKN Aerospace Engine Systems](https://www.gknaerospace.com/en/about-gkn-aerospace/locations/gkn-aerospace-in-europe/gkn-aerospace-in-sweden/) so that engineers can go to work, incorporating these algorithms in their workflows and give GKN a **competitive edge**.
+To answer this question, I modeled how an infectious disease spreads in a small population. Diseases such as COVID-19 spread through social interaction. I programmed intelligent agents to model a complex social system.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1 center-block" src="{{ '/assets/img/TRS/pic1_K.JPG' | relative_url }}" alt="" title="tech transfer"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/COVID/example_use_compressed.gif' | relative_url }}" alt="" title="COVID simulation"/>
     </div>
 </div>
 <div class="caption">
-    Technology transfer at GKN Aerospace Engine Systems, Trollhättan, Sweden
+    Interactive C++ simulation of an infectious disease 
 </div>
 
-<a href="https://asmedigitalcollection.asme.org/mechanicaldesign/article/doi/10.1115/1.4047908/1085767/Scalable-Setbased-Design-Optimization-and" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
-<a href="https://github.com/khbalhandawi/DM_SBD_OPT" target="_blank"> <i class="fab fa-github"></i> open source code</a>
+Optimization can be used to determine the critical amount of intervention necessary to keep the disease in check. 
+I used <a href="https://arxiv.org/abs/1911.01012" target="_blank">`StoMADS`</a>, a derivative free stochastic optimization algorithm to reduce the number of hospitalizations beneath the healthcare capacity while reducing the socio-economic cost of interventions by up to **5 times** compared to a complete lock-down. The effect of the optimal health policies on the trajectory of the disease is shown below.
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/COVID/I_compare.png' | relative_url }}" alt="" title="arbitrary policies"/>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/COVID/I_compare_opt.png' | relative_url }}" alt="" title="optimal policies"/>
+    </div>
+</div>
+<div class="caption">
+    The trajectory of the number of infections shown for arbitrary health policies (left) and optimal health policies (right).
+</div>
+
+<a href="https://ieeexplore.ieee.org/document/9532002" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
+<a href="https://github.com/khbalhandawi/COVID_SIM_GPU" target="_blank"> <i class="fab fa-github"></i> open source code</a>
+

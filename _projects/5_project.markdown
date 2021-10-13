@@ -1,35 +1,34 @@
 ---
 layout: page
-title: Corrosion sensing
-description: Corrosion detection using strain and photonic sensors
-img: /assets/img/Corrosion/corrosion_dp.png
+title: Photoelastic decoder
+description: Experimental stress measurement using CNNs
+img: /assets/img/Photoelastic/photo_dp.bmp
 importance: 5
 category: research
 ---
 
-Corrosion is an elusive quantity to measure accurately. This is because of all the electrodes that you would need to measure and record the corrosion current. This method is impractical when it comes to passive monitoring of structures that span several kilometers such as pipelines.
+Photoelasticity is well-known technique for measuring the principal stresses in a specimen spatially. If you ever help up a transparent plastic spoon against the sun and started twisting it you will notice rainbow like patterns in the spoon. The stresses in transparent material such as the Polystyrene in your spoon alter the wavelength of light causing this patterns to appear. These patterns can be interpreted to estimate the stresses in the spoon and estimate how close it is to breaking.
 
-Passive strain sensors based on light on fiber optics can accomplish this task by measure the rate at which strain decreases when a structure corrodes. I used a simple pre-stressed beam to demonstrate this concept.
+In experimental settings, an experienced technician interprets these patterns and translates them into stress. This makes this method a bit unaccessible to non-specialists. I thought about using convolution neural networks (CNNs) to map photoelastic fringes to stress maps. The training data for this algorithm is generated from known analytical stress profiles. I show an example below for a 3 point beam bend test.
 
-I found out that the rate of corrosion d&delta;/dt is proportional to the rate at which strain decreases d&epsilon;/dt.
-
-<p>
-\begin{equation*}
-\dfrac{d\delta}{dt} = \dfrac{4L}{3\sin \alpha}\dfrac{d\varepsilon}{dt},
-\end{equation*}
-</p>
-
-for a beam of length L, bent by an angle &alpha;. This concept is simulated below.
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Corrosion/loading.gif' | relative_url }}" alt="" title="loading"/>
+        <p>
+            The measured intensity I of light is given in terms of celerity c, thickness of material h, principal stress difference &sigma;<sub>1</sub> - &sigma;<sub>2</sub>, and wavelength &lambda;
+
+            \begin{equation*}
+            I = \sin^2\left(\dfrac{ch\pi(\sigma_1-\sigma_2)}{\lambda}\right).
+            \end{equation*}
+
+            The top image shows the principal stress difference &sigma;<sub>1</sub> - &sigma;<sub>2</sub>, while the bottom image shows I. Solving for &sigma;<sub>1</sub> - &sigma;<sub>2</sub> is not straight forward because of the sin<sup>2</sup> term.
+        </p>
     </div>
     <div class="col-sm-6 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Corrosion/corrosion.gif' | relative_url }}" alt="" title="corrosion"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Photoelastic/example_stress.gif' | relative_url }}" alt="" title="stress"/>&nbsp;&nbsp;
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Photoelastic/ex_fringes.gif' | relative_url }}" alt="" title="light intensity"/>
     </div>
 </div>
-<div class="caption">
-    Process of pre-stressed a metal beam (left) and subsequently corroding it (right) and their effect on strain
-</div>
 
-<a href="http://dx.doi.org/10.1016/j.snb.2016.05.167s" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
+This is a work in progress and the code and repository will be made publicly available once I have implemented the CNN decoder.
+
+<a href="https://github.com/khbalhandawi/photoelastic_gen" target="_blank"> <i class="fab fa-github"></i> open source code</a>

@@ -1,34 +1,44 @@
 ---
 layout: page
-title: Photoelastic decoder
-description: Experimental stress measurement using CNNs
-img: /assets/img/Photoelastic/photo_dp.bmp
+title: Manufacturing simulation
+description: Modeling distortion due to additive manufacturing
+img: /assets/img/thermomechanical/thermomechanical_dp.png
 importance: 4
 category: research
 ---
 
-Photoelasticity is well-known technique for measuring the principal stresses in a specimen spatially. If you ever help up a transparent plastic spoon against the sun and started twisting it you will notice rainbow like patterns in the spoon. The stresses in transparent material such as the Polystyrene in your spoon alter the wavelength of light causing this patterns to appear. These patterns can be interpreted to estimate the stresses in the spoon and estimate how close it is to breaking.
+When redesigning a product and remanufacturing it, one must consider the stresses that are stored in the structure as a result of the manufacturing process. Additive manufacturing can out a lot of strain on the structure due to the large temperatures needed to melt and deposit material on the structure.
 
-In experimental settings, an experienced technician interprets these patterns and translates them into stress. This makes this method a bit unaccessible to non-specialists. I thought about using convolution neural networks (CNNs) to map photoelastic fringes to stress maps. The training data for this algorithm is generated from known analytical stress profiles. I show an example below for a 3 point beam bend test.
+I managed to model the additive manufacturing process on part of an aeroengine component, where we attempt to increase the thickness of the outer casing of a turbine rear structure.
+Temperatures are described by a moving Gaussian heat source:
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
         <p>
-            The measured intensity I of light is given in terms of celerity c, thickness of material h, principal stress difference &sigma;<sub>1</sub> - &sigma;<sub>2</sub>, and wavelength &lambda;
-
             \begin{equation*}
-            I = \sin^2\left(\dfrac{ch\pi(\sigma_1-\sigma_2)}{\lambda}\right).
+            Q(r,\theta,t) = \dfrac{P}{\pi{r_l}^2 D}e^{-2\left(\frac{r-{V}t}{r_l}\right)^2},
             \end{equation*}
 
-            The top image shows the principal stress difference &sigma;<sub>1</sub> - &sigma;<sub>2</sub>, while the bottom image shows I. Solving for &sigma;<sub>1</sub> - &sigma;<sub>2</sub> is not straight forward because of the sin<sup>2</sup> term.
+            where r<sub>l</sub> is the laser beam radius, P is the laser power and D is the depth of penetration of the laser source. The coordinates r and &theta; are defined on the surface of the deposit as shown to the right
         </p>
     </div>
     <div class="col-sm-6 mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Photoelastic/example_stress.gif' | relative_url }}" alt="" title="stress"/>&nbsp;&nbsp;
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/Photoelastic/ex_fringes.gif' | relative_url }}" alt="" title="light intensity"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/thermomechanical/Heat_source.png' | relative_url }}" alt="" title="Guassian heat source"/>
     </div>
 </div>
+&nbsp;&nbsp;
+<p>The moving guassian heat source is used to compute the temperature gradients on the surface of the turbine rear structure as shown below. The thermal expansion due to the temperatures is also computed. The deformed structure that remains at the end of the deposition process is then used in further simulation and testing to ensure that the product can still meet its operational requirements.</p>
 
-This is a work in progress and the code and repository will be made publicly available once I have implemented the CNN decoder.
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/thermomechanical/temperature.gif' | relative_url }}" alt="" title="temperature"/>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/thermomechanical/deformation.gif' | relative_url }}" alt="" title="displacement"/>
+    </div>
+</div>
+<div class="caption">
+    Temperature gradients (left) and thermal expansion (right) on surface of the turbine rear structure.
+</div>
 
-<a href="https://github.com/khbalhandawi/photoelastic_gen" target="_blank"> <i class="fab fa-github"></i> open source code</a>
+<a href="https://www.designsociety.org/publication/40873/Integrating+additive+manufacturing+and+repair+strategies+of+aeroengine+components+in+the+computational+multi-disciplinary+engineering+design+process" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
