@@ -1,7 +1,8 @@
 ---
 layout: post
-date: 2020-08-19 07:59:00-0400
+title: Paper accepted
+date: 2020-08-18 16:11:00-0400
 inline: true
 ---
 
-Will be giving a virtual talk on design for changing requirements at [IDETC 2020](https://asmedigitalcollection.asme.org/IDETC-CIE/proceedings-abstract/IDETC-CIE2020/84003/V11AT11A031/1090211)
+Our [paper](https://asmedigitalcollection.asme.org/mechanicaldesign/article-abstract/143/2/021702/1085767/Scalable-Set-Based-Design-Optimization-and?redirectedFrom=fulltext) on scalable designs is published in the Journal of Mechanical Design
