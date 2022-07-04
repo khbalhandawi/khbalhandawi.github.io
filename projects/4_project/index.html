@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Khalil  Al Handawi | blank</title>
+<title>Khalil  Al Handawi | Manufacturing simulation</title>
 <meta name="description" content="Khalil Al Handawi's research portfolio.
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/4_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -101,8 +101,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/CV/">
                 CV
@@ -167,56 +165,49 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>My most recent accomplishments</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Manufacturing simulation</h1>
+    <p class="post-description">Modeling distortion due to additive manufacturing</p>
+  </header>
 
+  <article>
+    <p>When redesigning a product and remanufacturing it, one must consider the stresses that are stored in the structure as a result of the manufacturing process. Additive manufacturing can out a lot of strain on the structure due to the large temperatures needed to melt and deposit material on the structure.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
+<p>I managed to model the additive manufacturing process on part of an aeroengine component, where we attempt to increase the thickness of the outer casing of a turbine rear structure.
+Temperatures are described by a moving Gaussian heat source:</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <p>
+            \begin{equation*}
+            Q(r,\theta,t) = \dfrac{P}{\pi{r_l}^2 D}e^{-2\left(\frac{r-{V}t}{r_l}\right)^2},
+            \end{equation*}
 
+            where r<sub>l</sub> is the laser beam radius, P is the laser power and D is the depth of penetration of the laser source. The coordinates r and &theta; are defined on the surface of the deposit as shown to the right
+        </p>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/thermomechanical/Heat_source.png" alt="" title="Guassian heat source" />
+    </div>
+</div>
+<p>  </p>
+<p>The moving guassian heat source is used to compute the temperature gradients on the surface of the turbine rear structure as shown below. The thermal expansion due to the temperatures is also computed. The deformed structure that remains at the end of the deposition process is then used in further simulation and testing to ensure that the product can still meet its operational requirements.</p>
 
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/thermomechanical/temperature.gif" alt="" title="temperature" />
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/thermomechanical/deformation.gif" alt="" title="displacement" />
+    </div>
+</div>
+<div class="caption">
+    Temperature gradients (left) and thermal expansion (right) on surface of the turbine rear structure.
+</div>
+
+<p><a href="https://www.designsociety.org/publication/40873/Integrating+additive+manufacturing+and+repair+strategies+of+aeroengine+components+in+the+computational+multi-disciplinary+engineering+design+process" target="_blank"><i class="fas fa-book"></i> publication</a>  </p>
+
+  </article>
 
 </div>
 
