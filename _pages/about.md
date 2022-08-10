@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: PhD, <a href="http://www.sol.research.mcgill.ca/">SOL | McGill University</a>
+description: PhD, <a href="http://www.sol.research.mcgill.ca/">SOL</a>, McGill University | <a href="https://diro.umontreal.ca/english/our-departement/about-the-department/">DIRO</a>, Université de Montréal
 
 profile:
   align: right
