@@ -22,6 +22,6 @@ social: true  # includes social icons at the bottom of the page
 
 I am a researcher working on solving engineering and mathematics problems using numerical methods. The underlying theme of my research is numerical optimization. I believe that optimization can be used to solve a wide range of decision making problems encountered in design, manufacturing, and operations. 
 
-I have recently integrated optimzation with machine learning algorithms to help design the structures of machine learning models so that they can be trained efficiently. State-of-the-art derivative-free blackbox optimization algorithms make this possible and can substitute heuristic methods used to find optimal model structures. The tools I am developing using derivative-free blackbox optimization will make machine learning more accessible to newcomers by helping them identify the best model for their application with relative ease.
+I love teaching and helping others solve everyday decision-making problems using optimization. I also teach optimization principles to engineering students so that they can apply them in their designs, research, and work.
 
-I have solved several problems pertaining to additive manufacturing, product remanufacturing, epidemiology, and trend prediction and forecasting.
+In my research, I have used optimization to solve practical engineering problems, where the functions of interest are given by expensive numerical simulation. I also used the same principles to solve similar problems in other fields such as epidemiology, statistical modeling, and transportation.

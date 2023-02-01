@@ -1,101 +1,88 @@
 ---
 layout: page
-title: COVID-19 forecasting
-description: Infectious disease prediction using machine learning
-img: /assets/img/LSTM/project_pic.png
+title: Design space exploration
+description: Eliciting and analyzing conceptual designs
+img: /assets/img/DSE/TRS_exploded.png
 importance: 1
 category: research
 ---
 
-*How can we use data from a cross-sectional cohort of patients to predict COVID-19 rates at the national level?*
+<link rel="stylesheet" type="text/css" href="{{ 'lib/d3.parcoords.css' | relative_url }}">
+<style>
+/* data table styles */
+#gridDOE { height: 198px; display: grid; text-align: center; overflow: auto;}
+#gridConcept { height: 198px; display: grid; text-align: center; overflow: auto;}
+.row, .header { 
+  clear: left; 
+  font-size: 12px; 
+  /* line-height: 18px; 
+  height: 18px; */
+ }
+.row:nth-child(odd) { background: rgba(0,0,0,0.05); }
+.header { font-weight: bold; }
+.header > .cell { width: 67px; }
+.cell { float: left; overflow: hidden; white-space: nowrap; width: 67px; height: 18px; flex-basis: auto; }
+#gridConcept > .row > .cell { float: left; overflow: hidden; white-space: nowrap; width: 60px; height: 18px; flex-basis: auto; }
+#gridConcept > .header > .cell { width: 60px  ; }
 
-To answer this question, we collected data representative of the COVID-19 pandemic patients in Lebanon from Rafic Hariri University Hospital (RHUH). We analyzed said data for trends in COVID-19 incidence. The main indicator related to COVID-19 rates in this study is the cycle threshold (Ct) value obtained from Reverse-transcription quantitative polymerase chain reaction (RT-qPCR) tests conducted on the patients. This value is normally discarded and only the diagnostic result of the test is reported.
+</style>
+<script src="{{ 'lib/d3.js' | relative_url }}"></script>
+<script src="{{ 'lib/d3.svg.multibrush.js' | relative_url }}"></script>
+<script src="{{ 'lib/d3.parcoords.js' | relative_url }}"></script>
+<script src="{{ 'lib/divgrid.js' | relative_url }}"></script>
 
-The figure below shows that a sharp rise in Ct leads to an increase in the number of cases observed nationwide. Although this result is expected, there is a lag between the two events. This is explained by population dynamics and the rate at which the disease spreads. Most machine learning models can capture the inverse relationship between the two features ($$n_\text{cases}$$, and Ct) but only recurrent neural networks (RNNs) can capture the 'lag' or  temporal effect.
+In a project with collaborators from the <a href="https://systemsengineering.design/" target="_blank">Systems Engineering Design (SED) group</a> in Sweden and the <a href="https://www.auckland.ac.nz/en.html" target="_blank">University of Auckland</a>, we set out to explore conceptual design spaces in a systematic and quantitative manner to narrow them down to a handful of feasible and valuable concepts for further development and detailed design. We pose the question:
 
-<script>
-    var index = 0;
+*How can we analyze conceptual designs and quantify their ability to absorb a change in design requirements?*
 
-    function changeBanner() {
+To answer this question, we first looked at a number of concept generation tools (known as functional models) and converged to the Enhanced Function-Means (EF-M) tree because of its suitability for redesign scenarios (i.e., a design already exists and we wish to iterate on it).
 
-        loop_imgs = document.getElementById("animation").children;
-        
-        [].forEach.call(loop_imgs, function(v, i) {
-            loop_imgs[i].hidden = i !== index
-        });
-        index = (index + 1) % loop_imgs.length;
-    }
-    window.onload = function() {
-        setInterval(changeBanner, 1000)
-    };
-</script>
+We used the example of an aeroengine component to demonstrate our proposed concept synthesis and analysis method. The EF-M tree for the spokes (struts) of a turbine rear frame is shown below:
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <div id="animation">
-            <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/LSTM/raw_data/animation_0.png' | relative_url }}" alt="" title="COVID simulation" hidden/>
-            <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/LSTM/raw_data/animation_1.png' | relative_url }}" alt="" title="COVID simulation" hidden/>
-            <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/LSTM/raw_data/animation_2.png' | relative_url }}" alt="" title="COVID simulation" hidden/>
-            <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/LSTM/raw_data/animation_3.png' | relative_url }}" alt="" title="COVID simulation" hidden/>
-        </div>
-    </div>
+<div class="row justify-content-sm-center" style="background: rgba(0,0,0,0.0);">
+  <div class="col-sm-10 mt-3 mt-md-0" >
+    <img class="img-fluid rounded z-depth-1" src="{{ 'assets/img/DSE/efm_strut.svg' | relative_url }}" alt="efm" title="EF-M strut"/>
+  </div>
 </div>
 <div class="caption">
-    Tracking the COVID-19 pandemic in Lebanon and the corresponding Ct values of the patient cohort at Rafic Hariri University Hospital (RHUH)
+  An Enhanced Function-Means (EF-M) tree for the spokes (struts) of a turbine rear frame component.
 </div>
 
-An encoder RNN was used to capture the effects of Ct and past $$n_\text{cases}$$. A decoder RNN was used to forecast the future rise in $$n_\text{cases}$$. The structure of these networks is determining by their *hyperparameters*. Stochastic optimization <a href="https://arxiv.org/abs/1911.01012" target="_blank">`StoMADS`</a> was used to optimize the neural network's hyperparamters such that the validation error is minimized. This resulted in an impressively low value for the test score on the unseen dataset. The effect of optimization the hyperparameters is shown below for a few examples. Click the button below to cycle through the different models and their hyperparameters.
+We can enumerate four concepts from the tree above by combining the available vane cross-sections with the lean configuration of the struts shown below. We analyze each of the four concepts in terms of their **design margins**. These margins are present in each concept due to the discrete nature of each concept's available means (e.g., choices for vanes and lean angles). The more margin is present, the more change can be absorbed but the worse is the performance of the strut (e.g, the weight and manufacturing costs of the strut).
 
-<script>
-    // image sources in array. image[0] will have first image src, image[2] will have last src
-    var images_1 = [
-        "{{ '/assets/img/LSTM/HPO/model_scheme_001.png' | relative_url }}",
-        "{{ '/assets/img/LSTM/HPO/model_scheme_002.png' | relative_url }}",
-        "{{ '/assets/img/LSTM/HPO/model_scheme_003.png' | relative_url }}"
-    ]
+We use the <a href="https://link.springer.com/article/10.1007/s00163-020-00335-8" target="_blank">margin value method</a> by Brahma and Wynn and a <a href="https://sed-group.github.io/mvmlib/" target="_blank">library</a> which implements it to quantify these effects and plot the results on a parallel coordinates plot (PCP) for comparison.
 
-    var images_2 = [
-        "{{ '/assets/img/LSTM/HPO/model_tuned_1.png' | relative_url }}",
-        "{{ '/assets/img/LSTM/HPO/model_tuned_2.png' | relative_url }}",
-        "{{ '/assets/img/LSTM/HPO/model_tuned_3.png' | relative_url }}"
-    ]
-
-    var step = 0;
-    changeImage(); // set first image src after page loads
-
-    function changeImage() {
-        // exit if no images, or step = number of items in array
-        if (typeof images_1 == "undefined" ||  step == images_1.length) return;     
-        if (typeof images_2 == "undefined" ||  step == images_2.length) return; 
-
-        document.getElementById('click_animation_1').src = images_1[step];
-        document.getElementById('click_animation_2').src = images_2[step];
-        step++;
-    }
-</script>
-
-<div style="text-align: center; border: 0px solid">
-    <button type="button" onclick="changeImage()">
-        Cycle through models
-    </button>
-</div>
-
-<p></p>
-
-<div class="row justify-content-sm-center equal-height-medium ">
-    <div class="col-sm-7 mt-1 mt-md-0">
-        <img id="click_animation_1" class="img-fluid rounded z-depth-1" alt="" title="arbitrary policies"/>
+<div class="row justify-content-sm-center" style="background: rgba(0,0,0,0.0);">
+    <div class="col-sm-6 mt-3 mt-md-0 equal-height-medium">
+        <img id=lean0 class="img-fluid rounded z-depth-1" src="{{ 'assets/img/DSE/trs_upright.svg' | relative_url }}" alt="lean_0" title="lean angle = 0"/>
+        <div class="caption">lean angle &theta;=0<sup>o</sup></div>
     </div>
-    <div class="col-sm-5 mt-1 mt-md-0">
-        <img id="click_animation_2" class="img-fluid rounded z-depth-1" alt="" title="optimal policies"/>
+    <div class="col-sm-6 mt-3 mt-md-0 equal-height-medium">
+        <img id=lean30 class="img-fluid rounded z-depth-1" src="{{ 'assets/img/DSE/trs_lean.svg' | relative_url }}" alt="lean_0" title="lean angle = 30"/>
+        <div class="caption">lean angle &theta;=30<sup>o</sup></div>
     </div>
 </div>
-<div class="caption">
-    Structure of the RNN encoder/decoder paradigm (left) and corresponding predictions (right)
+<div class="row justify-content-sm-center" style="background: rgba(0,0,0,0.0); ">
+    <div class="col-sm-6 mt-3 mt-md-0 equal-height-shorter">
+        <img id=vanethin class="img-fluid rounded z-depth-1" src="{{ 'assets/img/DSE/vane_thin.svg' | relative_url }}" alt="thin vane" title="vanethin"/>
+        <div class="caption">height = 15mm</div>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0 equal-height-shorter">
+        <img id=vanethick class="img-fluid rounded z-depth-1" src="{{ 'assets/img/DSE/vane_thick.svg' | relative_url }}" alt="vanethick" title="thick vane"/>
+        <div class="caption">height = 17mm</div>
+    </div>
 </div>
+<div id="concept" class="parcoords" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
+<div id="gridConcept" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
+<div class="caption">Try hovering over the rows above to visualize each conceptual design.</div>
 
-The final trained model is made publicly available for inference on  <a href="https://covid-forecaster-lebanon.herokuapp.com/" target="_blank">`https://covid-forecaster-lebanon.herokuapp.com/`</a>.
+The most valuable design is the one that corresponds to the red line in the PCP. It is trivial to analyze and choose the most suitable design(s) when our selection is limited to just four concepts. However, our method is most useful when the number of combinations grows large. We demonstrate this on an example with 6,552 concepts shown below. Using PCP, the designer can pinch and narrow their selection down to a few candidates.
 
-<a href="https://www.gerad.ca/fr/papers/G-2021-48" target="_blank"><i class="fas fa-book"></i> preprint</a>&nbsp;&nbsp;
-<a href="https://covid-forecaster-lebanon.herokuapp.com/" target="_blank"> <i class="fab fa-github"></i> heroku app</a>
+<div id="doe" class="parcoords" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
+<div id="gridDOE" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
+<div class="caption">PCP of more than 3000 different conceptual alternative. Try pinching each vertical axis by clicking and dragging. You can also reorder the vertical axes by dragging the axis title.</div>
 
+<script src="{{ 'assets/js/paracoords_DOE.js' | relative_url }}"></script>
+<script src="{{ 'assets/js/paracoords_concepts.js' | relative_url }}"></script>
+
+<a href="https://sed-group.github.io/mvmlib/" target="_blank"> <i class="fab fa-github"></i> library</a>
