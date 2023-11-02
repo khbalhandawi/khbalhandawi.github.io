@@ -665,11 +665,6 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
-.container {  
-  display: flex;  
-  justify-content: space-around; /* or you can use "space-between" */  
-}  
-
 .brush .extent {  
   fill: steelblue;  
   fill-opacity: .6;  

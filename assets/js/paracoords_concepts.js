@@ -113,7 +113,7 @@ d3.csv('../../assets/data/concepts_data.csv', function(data) {
     .text(yDimension);
 
   // Add points to the scatter plot  
-  scatter.selectAll(".point")  
+  var points = scatter.selectAll(".point")  
     .data(data)  
     .enter().append("circle")  
     .attr("class", "point")  
@@ -122,14 +122,11 @@ d3.csv('../../assets/data/concepts_data.csv', function(data) {
     .attr("r", 5)  
     .style("fill", function(d) { return color(d); });  
 
-  // Assume that `data` is your data array  
-  var circles = scatter.selectAll("circle")
-
   // Create a brush  
   var brush = d3.svg.brush()  
     .x(d3.scale.identity().domain([0, width]))  
     .y(d3.scale.identity().domain([0, height]))  
-    .on("brush", brushed);
+    .on("brush", brush_scatter);
 
   // add brush to the figure
   scatter.append("g")  
@@ -170,13 +167,67 @@ d3.csv('../../assets/data/concepts_data.csv', function(data) {
           };
         });
 
+        points.each(function(d) {  
+          d3.select(this).style("opacity", 0.2);  
+        })
+
+        var selectedPoints = points.filter(function(point) {  
+          return parseFloat(point.id) === parseFloat(d.id);   
+        }); 
+
+        selectedPoints.each(function(d) {  
+          d3.select(this).style("opacity", 1);  
+        })
+
       },
       "mouseout": function(d) { 
         vanes.map(function(d) {d.img.style("opacity", 1.0)})
         struts.map(function(d) {d.img.style("opacity", 1.0)})
         parcoords.unhighlight([d]);
+        points.each(function(d) {  
+          d3.select(this).style("opacity", 1);  
+        })
       }
   });
+
+  scatter.selectAll(".point")
+  .on("mouseover", function(d) {  
+    // Unhighlight the other points first
+    points.each(function(d) {  
+      d3.select(this).style("opacity", 0.2);  
+    })
+
+    d3.select(this).style("opacity", 1);  // or any color you wish to highlight with  
+    var dHighlight = data.filter(function(row) {  
+      return parseFloat(row.id) == parseFloat(d.id);  
+    });  
+    parcoords.highlight(dHighlight);  
+
+    vanes.map(function(d) {d.img.style("opacity", 0.2)})
+    struts.map(function(d) {d.img.style("opacity", 0.2)})
+
+    vanes.forEach(function(vane) {
+      if (parseFloat(d["height"]) == parseFloat(vane["height"])) {
+        vane.img.style("opacity", 1);
+      };
+    });
+
+    struts.forEach(function(strut) {
+      if (parseFloat(d["lean angle"]) == parseFloat(strut["lean"])) {
+        strut.img.style("opacity", 1);
+      };
+    });
+
+  })  
+  .on("mouseout", function(d) {  
+    vanes.map(function(d) {d.img.style("opacity", 1.0)})
+    struts.map(function(d) {d.img.style("opacity", 1.0)})
+    points.each(function(d) {  
+      d3.select(this).style("opacity", 1);  
+      parcoords.unhighlight([d]);  
+    })
+  });  
+
 
   var lean0 = d3.select("#lean0");
   var lean30 = d3.select("#lean30");
@@ -193,8 +244,20 @@ d3.csv('../../assets/data/concepts_data.csv', function(data) {
     {lean:"30.0", img:lean30}
   ];
 
-  // update data table on brush event
-  parcoords.on("brush", function(d) {
+
+  function tabulate(d) {
+    let formatted = d.map(formatData);
+    d3.select("#gridConcept")
+        .datum(formatted.slice(0,10))
+        .call(grid)
+        .selectAll(".row")
+        .on({
+        "mouseover": function(d) { parcoords.highlight([d]) },
+        "mouseout": parcoords.unhighlight
+        });
+  }
+
+  function emphasis(d) {
 
     vanes.map(function(d) {d.img.style("opacity", 0.2)})
     struts.map(function(d) {d.img.style("opacity", 0.2)})
@@ -213,19 +276,29 @@ d3.csv('../../assets/data/concepts_data.csv', function(data) {
       });
     });
 
-    let formatted = d.map(formatData);
-    d3.select("#gridConcept")
-        .datum(formatted.slice(0,10))
-        .call(grid)
-        .selectAll(".row")
-        .on({
-        "mouseover": function(d) { parcoords.highlight([d]) },
-        "mouseout": parcoords.unhighlight
-        });
-  });
+    tabulate(d);
+
+    points.each(function(d) {  
+      d3.select(this).style("opacity", 0.2);  
+    })
+
+    var selectedPoints = points.filter(function(point) {  
+      return d.some(function(dElement) {  
+        return parseFloat(point.id) === parseFloat(dElement.id);  
+      });  
+    }); 
+
+    selectedPoints.each(function(d) {  
+      d3.select(this).style("opacity", 1); 
+    });  
+
+  }
+
+  // update data table on brush event
+  parcoords.on("brush", function(d) {emphasis(d)});
 
   // repeat for a brush on the scatter plot
-  function brushed() {  
+  function brush_scatter() {  
     var extent = brush.extent();  
     var extentDataCoords = [  
       [xScale.invert(extent[0][0]), yScale.invert(extent[0][1])],  
@@ -239,56 +312,73 @@ d3.csv('../../assets/data/concepts_data.csv', function(data) {
       struts.map(function(d) {d.img.style("opacity", 1)});  
     
       // Set the data table to the full dataset  
-      let formatted = data.map(formatData); // Replace 'data' with your full dataset  
-      d3.select("#gridConcept")  
-          .datum(formatted)  
-          .call(grid)  
-          .selectAll(".row")  
-          .on({  
-          "mouseover": function(d) { parcoords.highlight([d]) },  
-          "mouseout": parcoords.unhighlight  
-          });  
-    
+      tabulate(data);
+      parcoords.unhighlight(data);
+
+      points.each(function(d) {  
+        d3.select(this).style("opacity", 1);  
+      })
+
       return; // Exit the function early  
     } 
-
-    // Reset opacity for all elements  
-    vanes.map(function(d) {d.img.style("opacity", 0.2)});  
-    struts.map(function(d) {d.img.style("opacity", 0.2)});  
   
-    // Highlight elements based on the brush selection
+    points.each(function(d) {  
+      d3.select(this).style("opacity", 0.2);  
+    })
+
+    // collect data on selected elements
     var selectedData = []; // Array to store brushed data items   
-    circles.each(function(d) {  
+    points.each(function(d) {  
       if (extentDataCoords[0][0] <= parseFloat(d[xDimension]) && parseFloat(d[xDimension]) <= extentDataCoords[1][0] &&  
           extentDataCoords[1][1] <= parseFloat(d[yDimension]) && parseFloat(d[yDimension]) <= extentDataCoords[0][1]) {  
 
         // Push the selected data item into the array  
         selectedData.push(d);  
-
-        vanes.forEach(function(vane) {  
-            if (parseFloat(d["height"]) == parseFloat(vane["height"])) {  
-                vane.img. style("opacity", 1);  
-            }  
-        });  
-
-        struts.forEach(function(strut) {  
-            if (parseFloat(d["lean angle"]) == parseFloat(strut["lean"])) {  
-                strut.img.style("opacity", 1);  
-            }  
-        });
+        d3.select(this).style("opacity", 1); 
       }  
     });   
-    
-    let formatted = selectedData.map(formatData);
-    d3.select("#gridConcept")
-        .datum(formatted.slice(0,10))
-        .call(grid)
-        .selectAll(".row")
-        .on({
-        "mouseover": function(d) { parcoords.highlight([d]) },
-        "mouseout": parcoords.unhighlight
-        });
+
+    emphasis(selectedData)
+    parcoords.highlight(selectedData) 
 
   }
 
 });
+
+/*--------- AN ALTERNATIVE WAY FOR MOUSEOVER OF SCATTER PLOTS ------------*/
+
+// // Function to calculate the distance between a point and the mouse  
+// function distance(point, mouse) {  
+//   var dx = point[0] - mouse[0];  
+//   var dy = point[1] - mouse[1];  
+//   return Math.sqrt(dx * dx + dy * dy);  
+// }  
+
+// // Then, add an overlay on top of the points  
+// scatter.append("rect")  
+//   .attr("width", width)  
+//   .attr("height", height)  
+//   .style("fill", "none")  
+//   .style("pointer-events", "all")  // This makes the overlay respond to mouse events  
+//   .on("mouseover", function() {  
+//     // Get mouse coordinates  
+//     var mouse = d3.mouse(this);  
+//     // Check each point to see if it's within a certain distance of the mouse      points.each(function(d) {  
+//     points.each(function(d) {  
+//       if(distance([xScale(d[xDimension]), yScale(d[yDimension])], mouse) < 10) { // 10 is the distance threshold  
+//         // Highlight the point  
+//         d3.select(this).style("fill", "red");  // or any color you wish to highlight with  
+//         var dHighlight = data.filter(function(row) {  
+//           return parseFloat(row.id) == parseFloat(d.id);  
+//         });  
+//         parcoords.highlight(dHighlight);  
+//       }
+//     })
+//   }) 
+//   .on("mouseout", function() {  
+//     points.each(function(d) {  
+//       // Unhighlight the point  
+//       d3.select(this).style("fill", function(d) { return color(d); });  
+//       parcoords.unhighlight([d]);  
+//     })
+//   });

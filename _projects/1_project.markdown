@@ -42,8 +42,7 @@ We used the example of an aeroengine component to demonstrate our proposed conce
 
 We use the <a href="https://link.springer.com/article/10.1007/s00163-020-00335-8" target="_blank">margin value method</a> by Brahma and Wynn and a <a href="https://sed-group.github.io/mvmlib/" target="_blank">library</a> which implements it to quantify these effects and plot the results on a parallel coordinates plot (PCP) for comparison.
 
-
-<div class="container">  
+<div class="container" style="display: flex;  justify-content: space-around;">  
   <div class="rows-wrapper">  
   <div class="row justify-content-sm-center" style="background: rgba(0,0,0,0.0);">
       <div class="col-sm-6 mt-3 mt-md-0 equal-height-medium">
@@ -66,13 +65,13 @@ We use the <a href="https://link.springer.com/article/10.1007/s00163-020-00335-8
       </div>
   </div>
   </div>
-  <div id="scatterConcept" class="scatter" style="width:950px;height:350px; margin: 0 auto; justify-content: center; flex-grow: 1;"></div>  
+  <div id="scatterConcept" class="scatter" style="width:1150px;height:350px; margin: 0 auto; justify-content: center; flex-grow: 1;"></div>  
 </div>
 <div id="pcpConcept" class="parcoords" style="width:750px;height:300px; margin: 0 auto; justify-content: center; overflow: hidden;"></div>
 <div id="gridConcept" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
 <div class="caption">Try hovering over the rows above to visualize each conceptual design.</div>
 
-The most valuable design is the one that corresponds to the red line in the PCP. It is trivial to analyze and choose the most suitable design(s) when our selection is limited to just four concepts. However, our method is most useful when the number of combinations grows large. We demonstrate this on an example with 6,552 concepts shown below. Using PCP, the designer can pinch and narrow their selection down to a few candidates.
+The most valuable design is the one that corresponds to the red line in the PCP and red dot on the scatter plot. It is trivial to analyze and choose the most suitable design(s) when our selection is limited to just four concepts. However, our method is most useful when the number of combinations grows large. We demonstrate this on an example with 6,552 concepts shown below. Using PCP, the designer can pinch and narrow their selection down to a few candidates.
 
 <div id="doe" class="parcoords" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
 <div id="gridDOE" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
