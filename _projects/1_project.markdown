@@ -75,7 +75,8 @@ The most valuable design is the one that corresponds to the red line in the PCP 
 
 <div id="doe" class="parcoords" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
 <div id="gridDOE" style="width:750px;height:200px; margin: 0 auto; justify-content: center;"></div>
-<div class="caption">PCP of more than 3000 different conceptual alternative. Try pinching each vertical axis by clicking and dragging. You can also reorder the vertical axes by dragging the axis title.</div>
+<div id="scatterDOE" class="scatter" style="width:750px;height:350px; margin: 0 auto; justify-content: center;"></div> 
+<div class="caption">PCP of more than 3000 different conceptual alternative. Try pinching each vertical axis by clicking and dragging. You can also drag a selection box across the scatter plot to filter designs. You can also reorder the vertical axes by dragging the axis title.</div>
 
 <script src="{{ 'assets/js/paracoords_DOE.js' | relative_url }}"></script>
 <script src="{{ 'assets/js/paracoords_concepts.js' | relative_url }}"></script>
