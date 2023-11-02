@@ -664,3 +664,15 @@ html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
+
+.container {  
+  display: flex;  
+  justify-content: space-around; /* or you can use "space-between" */  
+}  
+
+.brush .extent {  
+  fill: steelblue;  
+  fill-opacity: .6;  
+  stroke: white;  
+  shape-rendering: crispEdges;  
+}  
