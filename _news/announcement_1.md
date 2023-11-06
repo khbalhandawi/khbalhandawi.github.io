@@ -1,21 +1,12 @@
 ---
 layout: post
-date: 2022-06-26 11:00:00-1100
-title: Our paper on scalable designs has been selected for the ASME Journal of Mechanical Design Editor's choice award!
+title: Our paper on design space exploration is accepted for publication at the ASME Journal of Mechanical Design
+date: 2023-11-06 16:11:00-0400
 inline: False
 ---
 
-The editor's choice award was presented during the ASME [IDETC 2022](https://event.asme.org/IDETC-CIE) conference held n St. Louis, Missouri, United States. The [paper](https://asmedigitalcollection.asme.org/mechanicaldesign/article-abstract/143/2/021702/1085767/Scalable-Set-Based-Design-Optimization-and?redirectedFrom=fulltext) was also presented during the JMD [spotlight session](https://asmejmd.org/2022/07/24/invitation-to-idetc-cie-2022-spotlights/) of the conference, where a talk was given about the cost-saving opportunities that remanufacturing can provide. These cost-savings will manifest when changes to the design are needed at some point throughout its lifecycle.
+Our paper titled ["Design space exploration and evaluation using margin-based trade-offs"](https://doi.org/10.1115/1.4063966) is accepted for publication in the ASME Journal of Mechanical Design.
 
-An online [web-app](https://scale-am.herokuapp.com/) was also demonstrated during the session to show how scalability (the ease with which a design can be remanufactured) can be calculated for a given engineering design case.
+The paper analyzes the value of design margins for multiple design configurations. The most promising candidates in terms of value should provide a good balance between the ability to absorb change in requirements (e.g., a change in structural loads) and the level of overdesign brought about by the margin (e.g., additional weight and cost).
 
-***
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ site.baseurl }}/assets/img/Editors choice 2022.jpeg">
-    </div>
-</div>
-<div class="caption">
-    The award being presented to Prof. Michael Kokkolaras on behalf of myself and the coauthors.
-</div>
+An interactive blog that summarizes the key concepts can be found at [here](https://khbalhandawi.github.io/projects/1_project/).

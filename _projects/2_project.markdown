@@ -101,6 +101,6 @@ An encoder RNN was used to capture the effects of Ct and past $$n_\text{cases}$$
 
 The final trained model is made publicly available for inference on  <a href="https://covid-forecaster-lebanon.herokuapp.com/" target="_blank">`https://covid-forecaster-lebanon.herokuapp.com/`</a>.
 
-<a href="https://www.gerad.ca/fr/papers/G-2021-48" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
+<a href="https://www.mdpi.com/1999-4915/14/7/1414" target="_blank"><i class="fas fa-book"></i> publication</a>&nbsp;&nbsp;
 <a href="https://covid-forecaster-lebanon.herokuapp.com/" target="_blank"> <i class="fab fa-github"></i> heroku app</a>
 
