@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Khalil  Al Handawi | blank</title>
+<title>Khalil  Al Handawi | Corrosion sensing</title>
 <meta name="description" content="Khalil Al Handawi's research portfolio.
 ">
 <meta name="robots" content="noindex, nofollow">
@@ -32,7 +32,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/6_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -103,8 +103,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/CV/">
                 CV
@@ -169,56 +167,40 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>My most recent accomplishments</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Corrosion sensing</h1>
+    <p class="post-description">Corrosion detection using strain and photonic sensors</p>
+  </header>
 
+  <article>
+    <p>Corrosion is an elusive quantity to measure accurately. This is because of all the electrodes that you would need to measure and record the corrosion current. This method is impractical when it comes to passive monitoring of structures that span several kilometers such as pipelines.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
+<p>Passive strain sensors based on light on fiber optics can accomplish this task by measure the rate at which strain decreases when a structure corrodes. I used a simple pre-stressed beam to demonstrate this concept.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>I found out that the rate of corrosion dδ/dt is proportional to the rate at which strain decreases dε/dt.</p>
 
+<p>
+\begin{equation*}
+\dfrac{d\delta}{dt} = \dfrac{4L}{3\sin \alpha}\dfrac{d\varepsilon}{dt},
+\end{equation*}
+</p>
 
+<p>for a beam of length L, bent by an angle α. This concept is simulated below.</p>
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/Corrosion/loading.gif" alt="" title="loading" />
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/Corrosion/corrosion.gif" alt="" title="corrosion" />
+    </div>
+</div>
+<div class="caption">
+    Process of pre-stressed a metal beam (left) and subsequently corroding it (right) and their effect on strain
+</div>
+
+<p><a href="http://dx.doi.org/10.1016/j.snb.2016.05.167s" target="_blank"><i class="fas fa-book"></i> publication</a>  </p>
+
+  </article>
 
 </div>
 

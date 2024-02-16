@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Khalil  Al Handawi | blank</title>
+<title>Khalil  Al Handawi | Photoelastic decoder</title>
 <meta name="description" content="Khalil Al Handawi's research portfolio.
 ">
 <meta name="robots" content="noindex, nofollow">
@@ -32,7 +32,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/5_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -103,8 +103,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/CV/">
                 CV
@@ -169,56 +167,39 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>My most recent accomplishments</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Photoelastic decoder</h1>
+    <p class="post-description">Experimental stress measurement using CNNs</p>
+  </header>
 
+  <article>
+    <p>Photoelasticity is well-known technique for measuring the principal stresses in a specimen spatially. If you ever help up a transparent plastic spoon against the sun and started twisting it you will notice rainbow like patterns in the spoon. The stresses in transparent material such as the Polystyrene in your spoon alter the wavelength of light causing this patterns to appear. These patterns can be interpreted to estimate the stresses in the spoon and estimate how close it is to breaking.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
+<p>In experimental settings, an experienced technician interprets these patterns and translates them into stress. This makes this method a bit unaccessible to non-specialists. I thought about using convolution neural networks (CNNs) to map photoelastic fringes to stress maps. The training data for this algorithm is generated from known analytical stress profiles. I show an example below for a 3 point beam bend test.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <p>
+            The measured intensity I of light is given in terms of celerity c, thickness of material h, principal stress difference &sigma;<sub>1</sub> - &sigma;<sub>2</sub>, and wavelength &lambda;
 
+            \begin{equation*}
+            I = \sin^2\left(\dfrac{ch\pi(\sigma_1-\sigma_2)}{\lambda}\right).
+            \end{equation*}
 
+            The top image shows the principal stress difference &sigma;<sub>1</sub> - &sigma;<sub>2</sub>, while the bottom image shows I. Solving for &sigma;<sub>1</sub> - &sigma;<sub>2</sub> is not straight forward because of the sin<sup>2</sup> term.
+        </p>
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/Photoelastic/example_stress.gif" alt="" title="stress" />&nbsp;&nbsp;
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/Photoelastic/ex_fringes.gif" alt="" title="light intensity" />
+    </div>
+</div>
+
+<p>This is a work in progress and the code and repository will be made publicly available once I have implemented the CNN decoder.</p>
+
+<p><a href="https://github.com/khbalhandawi/photoelastic_gen" target="_blank"> <i class="fab fa-github"></i> open source code</a></p>
+
+  </article>
 
 </div>
 

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Khalil  Al Handawi | blank</title>
+<title>Khalil  Al Handawi | Hexapod</title>
 <meta name="description" content="Khalil Al Handawi's research portfolio.
 ">
 <meta name="robots" content="noindex, nofollow">
@@ -32,7 +32,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/9_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -103,8 +103,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/CV/">
                 CV
@@ -169,56 +167,39 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>My most recent accomplishments</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Hexapod</h1>
+    <p class="post-description">A hydraulic powered hexapod</p>
+  </header>
 
+  <article>
+    <p>I designed and developed of a six-legged hexapod platform that employed a hydraulic system to actuate each of the six robotic manipulators used for locomotion.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
+<p>The robotic manipulator (a leg of the hexapod) was reverse engineered and repurposed for walking from a used hydraulic excavator manufactured by JCB. I made a faithful reproduction of the 3D CAD model in SOLIDWORKS by taking measurements from the physical excavator so that the necessary modifications can be designed and manufactured.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>Once the mechanical setup was built, I used kinematics, and rotation matrices to compute the necessary actuation for tracking a given trajectory.</p>
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/hexapod/animation.gif" alt="" title="kinematics" />
+    </div>
+</div>
+<div class="caption">
+    Forward and inverse kinematics of a RRR robotic manipulator when used for walking
+</div>
 
+<p>I used and configured a microcontroller (Arduino) to provide the actuation signal to the servo-valves that distribute hydraulic power throughout the hexapod and achieved smooth tracking of the target trajectory that I provided.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0 equal-height-hexapod">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/hexapod/test_rig.png" alt="" title="test rig" />
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0 equal-height-hexapod">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/hexapod/working_arm.gif" alt="" title="in action" />
+    </div>
+</div>
+
+  </article>
 
 </div>
 
